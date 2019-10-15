@@ -2,6 +2,11 @@
 
 Есть ли на свете более бесполезная вещь?
 
+## Где взять?
+[Скачать по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/3.0/chrome-lazy-arm-3.rar)
+
+![](screenshoot/demo.jpg)
+
 ## Зачем?
 
 Посмотреть количество свободных (косяк в запросе исправлен)
@@ -17,11 +22,6 @@
 ![](screenshoots/status_color.jpg)
 
 Аналитики уже реализовали
-
-## Где взять?
-[Скачать по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/3.0/chrome-lazy-arm-3.rar)
-
-![](screenshoot/demo.jpg)
 
 ## Как включить?
 
