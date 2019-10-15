@@ -1,0 +1,133 @@
+<html>
+
+<head>
+   <title>Water Popup</title>
+   <meta charset="utf-8">
+   <link type="text/css" rel="stylesheet" href="./libs/css/materialize.min.css" media="screen,projection" />
+   <link type="text/css" rel="stylesheet" href="./libs/css/popup.css" />
+</head>
+
+<body>
+
+   <!--
+   <button id='sampleSecond' value='0.1'>Sample Second</button>
+   <button id='15min' value='15'>15 Minutes</button>
+   <button id='30min' value='30'>30 Minutes</button>
+   <button id='cancelAlarm'>Cancel Alarm</button>
+-->
+
+   <div id="popup-wrapper">
+
+      <h4>Настройка Lazy-ARM</h4>
+
+      <div class="row">
+         <div class="col s12">
+            <ul class="tabs">
+               <li class="tab col s3"><a href="#test1" class="active">Выбор цвета</a></li>
+               <li class="tab col s3"><a href="#test2">картиночки</a></li>
+               <li class="tab col s3"><a href="#test3">(будут позже)</a></li>
+            </ul>
+         </div>
+
+         <div id="test1" class="col s12" style="padding: 20px;">
+
+            <!--
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-around;">
+                  <span>текущий фон: </span><div id='current_bg' style="height: 15px; width: 15px; background: green"></div>
+                  <span>текст: </span><div id='current_font' style="height: 15px; width: 15px; background: red"></div>
+            </div>-->
+            
+            <h5>Стандартный пресет</h5>
+            <div class="theme_color_table">
+               <a href="#" id="#ffebee" class="theme_color" style="background: #ffebee"></a>
+               <a href="#" id="#ffcdd2" class="theme_color" style="background: #ffcdd2"></a>
+               <a href="#" id="#ef9a9a" class="theme_color" style="background: #ef9a9a"></a>
+               <a href="#" id="#e57373" class="theme_color" style="background: #e57373"></a>
+               <a href="#" id="#ef5350" class="theme_color" style="background: #ef5350"></a>
+               <a href="#" id="#f44336" class="theme_color" style="background: #f44336"></a>
+               <a href="#" id="#e53935" class="theme_color" style="background: #e53935"></a>
+               <a href="#" id="#d32f2f" class="theme_color" style="background: #d32f2f"></a>
+               <a href="#" id="#c62828" class="theme_color" style="background: #c62828"></a>
+               <a href="#" id="#b71c1c" class="theme_color" style="background: #b71c1c"></a>
+            </div>
+            <div class="theme_color_table">
+               <a href="#" id="#e8eaf6" class="theme_color" style="background: #e8eaf6"></a>
+               <a href="#" id="#c5cae9" class="theme_color" style="background: #c5cae9"></a>
+               <a href="#" id="#9fa8da" class="theme_color" style="background: #9fa8da"></a>
+               <a href="#" id="#7986cb" class="theme_color" style="background: #7986cb"></a>
+               <a href="#" id="#5c6bc0" class="theme_color" style="background: #5c6bc0"></a>
+               <a href="#" id="#3f51b5" class="theme_color" style="background: #3f51b5"></a>
+               <a href="#" id="#3949ab" class="theme_color" style="background: #3949ab"></a>
+               <a href="#" id="#303f9f" class="theme_color" style="background: #303f9f"></a>
+               <a href="#" id="#283593" class="theme_color" style="background: #283593"></a>
+               <a href="#" id="#1a237e" class="theme_color" style="background: #1a237e"></a>
+            </div>
+            <div class="theme_color_table">
+               <a href="#" id="#e3f2fd" class="theme_color" style="background: #e3f2fd"></a>
+               <a href="#" id="#bbdefb" class="theme_color" style="background: #bbdefb"></a>
+               <a href="#" id="#90caf9" class="theme_color" style="background: #90caf9"></a>
+               <a href="#" id="#64b5f6" class="theme_color" style="background: #64b5f6"></a>
+               <a href="#" id="#42a5f5" class="theme_color" style="background: #42a5f5"></a>
+               <a href="#" id="#2196f3" class="theme_color" style="background: #2196f3"></a>
+               <a href="#" id="#1e88e5" class="theme_color" style="background: #1e88e5"></a>
+               <a href="#" id="#1976d2" class="theme_color" style="background: #1976d2"></a>
+               <a href="#" id="#1565c0" class="theme_color" style="background: #1565c0"></a>
+               <a href="#" id="#0d47a1" class="theme_color" style="background: #0d47a1"></a>
+            </div>
+            <div class="theme_color_table">
+               <a href="#" id="#e8f5e9" class="theme_color" style="background: #e8f5e9"></a>
+               <a href="#" id="#c8e6c9" class="theme_color" style="background: #c8e6c9"></a>
+               <a href="#" id="#a5d6a7" class="theme_color" style="background: #a5d6a7"></a>
+               <a href="#" id="#81c784" class="theme_color" style="background: #81c784"></a>
+               <a href="#" id="#66bb6a" class="theme_color" style="background: #66bb6a"></a>
+               <a href="#" id="#4caf50" class="theme_color" style="background: #4caf50"></a>
+               <a href="#" id="#43a047" class="theme_color" style="background: #43a047"></a>
+               <a href="#" id="#388e3c" class="theme_color" style="background: #388e3c"></a>
+               <a href="#" id="#2e7d32" class="theme_color" style="background: #2e7d32"></a>
+               <a href="#" id="#1b5e20" class="theme_color" style="background: #1b5e20"></a>
+            </div>
+            <div class="theme_color_table">
+               <a href="#" id="#fff3e0" class="theme_color" style="background: #fff3e0"></a>
+               <a href="#" id="#ffe0b2" class="theme_color" style="background: #ffe0b2"></a>
+               <a href="#" id="#ffcc80" class="theme_color" style="background: #ffcc80"></a>
+               <a href="#" id="#ffb74d" class="theme_color" style="background: #ffb74d"></a>
+               <a href="#" id="#ffa726" class="theme_color" style="background: #ffa726"></a>
+               <a href="#" id="#ff9800" class="theme_color" style="background: #ff9800"></a>
+               <a href="#" id="#fb8c00" class="theme_color" style="background: #fb8c00"></a>
+               <a href="#" id="#f57c00" class="theme_color" style="background: #f57c00"></a>
+               <a href="#" id="#ef6c00" class="theme_color" style="background: #ef6c00"></a>
+               <a href="#" id="#e65100" class="theme_color" style="background: #e65100"></a>
+            </div>
+
+            <h5>Выбрать свой цвет фона</h5>
+
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+               <span>Выбрать:</span>
+               <input type="color" id="user_color_picker" style='width:100px; height: 37px; border: 1px solid grey;' />
+               <a id="confirm_user_color" class="waves-effect waves-light btn">Подтвердить</a>
+            </div>
+
+            <h5>Выбрать цвет текста</h5>
+            <div class="theme_color_table">
+               <a href="#" id="#fff" class="font_color" style="background: #fff; outline: 1px solid grey;"></a>
+               <a href="#" id="#000" class="font_color" style="background: #000; outline: 1px solid grey;"></a>
+            </div>
+
+            <h5>Обновления</h5>
+            <a href="https://github.com/justmonk" target="_blank">github.com/justmonk</a>
+
+         </div>
+
+         <div id="test2" class="col s12">и темная тема будет</div>
+         <div id="test3" class="col s12">попозже</div>
+      </div>
+
+   </div>
+
+
+   <script type="text/javascript" src="./libs/js/materialize.min.js"></script>
+   <script src="popup.js"></script>
+
+</body>
+
+</html>

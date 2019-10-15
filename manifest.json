@@ -1,0 +1,21 @@
+{
+   "name": "Lazy ARM",
+   "version": "3.0",
+   "description": "Допил админки, добавляет разные фичи",
+   "manifest_version": 2,
+   "permissions": ["contextMenus", "storage"],
+   "content_scripts": [
+      {
+        "matches": ["https://aster-mp5.kontur/cc-agent/#/", "https://aster-mp5.kontur/cc-agent/"],
+        "js": ["contentScript.js"],
+        "css": ["armStyle.css"]
+      }
+    ],
+    "web_accessible_resources": [
+      "libs/*"
+    ],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_title": "Кликните для настройки внешнего вида админки"
+    }
+}

@@ -1,0 +1,28 @@
+#popup-wrapper {
+   width: 400px;
+   font-size: 15px;
+}
+
+#popup-wrapper h4, h5 {
+   text-align: center;
+}
+
+/*таблица выбора цвета*/
+.theme_color_table {
+   display: flex;
+}
+
+/*кнопки выбора цвета*/
+.theme_color {
+   width: 50px;
+   height: 40px;
+   border: 1px solid #efefef;
+   display: block;
+}
+
+.font_color {
+   width: 50px;
+   height: 40px;
+   border: 1px solid #efefef;
+   display: block;
+}
