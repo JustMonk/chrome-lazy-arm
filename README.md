@@ -4,6 +4,20 @@
 
 ## Зачем?
 
+Посмотреть количество свободных (косяк в запросе исправлен)
+
+![](screenshoots/free.jpg)
+
+Изменить цвет шапки/шрифта
+
+![](screenshoots/settings.jpg)
+
+Выделения рабочих перерывов нет
+
+![](screenshoots/status_color.jpg)
+
+Аналитики уже реализовали
+
 ## Где взять?
 [Скачать по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/3.0/chrome-lazy-arm-3.rar)
 
@@ -13,5 +27,15 @@
 
 1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/3.0/chrome-lazy-arm-3.rar), распаковать;
 2) В адресной строке браузера ввести `chrome://extensions/`
+
+![](screenshoots/chrome_extensions_path.jpg)
+
 3) В правом верхнем углу включить режим разработчика
+
+![](screenshoots/dev_mode.jpg)
+
 4) Указать путь до распакованной папки
+
+![](screenshoots/path.jpg)
+
+5) Готово
