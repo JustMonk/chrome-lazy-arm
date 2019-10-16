@@ -27,7 +27,7 @@
 
 Аналитики уже реализовали
 
-## Как включить?
+## Как включить? (инструкция по шагам)
 
 1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/4.0/chrome-lazy-arm-4.rar), распаковать;
 2) В адресной строке браузера ввести `chrome://extensions/`
