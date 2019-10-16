@@ -9,34 +9,33 @@
 
 <body>
 
-   <!--
-   <button id='sampleSecond' value='0.1'>Sample Second</button>
-   <button id='15min' value='15'>15 Minutes</button>
-   <button id='30min' value='30'>30 Minutes</button>
-   <button id='cancelAlarm'>Cancel Alarm</button>
--->
-
    <div id="popup-wrapper">
 
-      <h4>Настройка Lazy-ARM</h4>
+      <h4>Настройка Lazy-ARM (v4)</h4>
 
       <div class="row">
          <div class="col s12">
             <ul class="tabs">
                <li class="tab col s3"><a href="#test1" class="active">Выбор цвета</a></li>
-               <li class="tab col s3"><a href="#test2">картиночки</a></li>
-               <li class="tab col s3"><a href="#test3">(будут позже)</a></li>
+               <li class="tab col s3"><a href="#test2">Changelog</a></li>
+               <li class="tab col s3"><a href="#test3">Помощь</a></li>
             </ul>
          </div>
 
          <div id="test1" class="col s12" style="padding: 20px;">
-
-            <!--
-            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-around;">
-                  <span>текущий фон: </span><div id='current_bg' style="height: 15px; width: 15px; background: green"></div>
-                  <span>текст: </span><div id='current_font' style="height: 15px; width: 15px; background: red"></div>
-            </div>-->
             
+            <h5>Ночной режим</h5>
+            <div class="switch" style="display: flex; justify-content: center;">
+               <label>
+                 Off
+                 <input type="checkbox" id="night">
+                 <span class="lever"></span>
+                 On
+               </label>
+
+
+             </div>
+
             <h5>Стандартный пресет</h5>
             <div class="theme_color_table">
                <a href="#" id="#ffebee" class="theme_color" style="background: #ffebee"></a>
@@ -114,12 +113,12 @@
             </div>
 
             <h5>Обновления</h5>
-            <a href="https://github.com/justmonk" target="_blank">github.com/justmonk</a>
+            <a href="https://github.com/JustMonk/chrome-lazy-arm" target="_blank">github.com/JustMonk/chrome-lazy-arm</a>
 
          </div>
 
-         <div id="test2" class="col s12">и темная тема будет</div>
-         <div id="test3" class="col s12">попозже</div>
+         <div id="test2" class="col s12">ночной режим добавлен</div>
+         <div id="test3" class="col s12">1) Если по нажатию ничего не происходит - проверь адрес админки, он должен быть /cc-agent/, с тестовой версией /сс-agent-test/ расширение не работает</div>
       </div>
 
    </div>

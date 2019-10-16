@@ -1,9 +1,7 @@
-/*#0066cc - цвет звонков*/
-/*bg - #5f5fc4*/
-
 header {
-    background: #5f5fc4 !important;
+   background: #5f5fc4 !important;
 }
+
 header span {
-    color: #fff;
+   color: #fff;
 }
