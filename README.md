@@ -1,9 +1,9 @@
-## chrome lazy arm 4
+## chrome lazy arm 4.1
 
 Есть ли на свете более бесполезная вещь? А теперь еще и с ночным режимом
 
 ## Где взять?
-[Скачать по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/4.0/chrome-lazy-arm-4.rar)
+[Скачать по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/4.1/chrome-lazy-arm-4.1.rar)
 
 ![](screenshoot/demo.jpg)
 
@@ -24,7 +24,7 @@
 
 ## Как включить? (инструкция по шагам)
 
-1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/4.0/chrome-lazy-arm-4.rar), распаковать;
+1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/4.1/chrome-lazy-arm-4.1.rar), распаковать;
 2) В адресной строке браузера ввести `chrome://extensions/`
 
 ![](screenshoots/chrome_extensions_path.jpg)
