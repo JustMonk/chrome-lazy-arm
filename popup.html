@@ -11,30 +11,33 @@
 
    <div id="popup-wrapper">
 
-      <h4>Настройка Lazy-ARM (v4.1)</h4>
+      <div style="display: flex; align-items: center; justify-content: center;">
+         <h4>Настройка Lazy-ARM</h4> <span
+            style="font-size: 16px; background: #4dc71f; color: #fff; padding: 2px 5px; margin-left: 5px; border-radius: 3px; text-shadow: 1px 1px 1px black;">5.0</span>
+      </div>
 
       <div class="row">
          <div class="col s12">
             <ul class="tabs">
                <li class="tab col s3"><a href="#test1" class="active">Выбор цвета</a></li>
-               <li class="tab col s3"><a href="#test2">Changelog</a></li>
+               <li class="tab col s3"><a href="#test2"><b>Чат (!)</b></a></li>
                <li class="tab col s3"><a href="#test3">Помощь</a></li>
             </ul>
          </div>
 
          <div id="test1" class="col s12" style="padding: 20px;">
-            
+
             <h5>Ночной режим</h5>
             <div class="switch" style="display: flex; justify-content: center;">
                <label>
-                 Off
-                 <input type="checkbox" id="night">
-                 <span class="lever"></span>
-                 On
+                  Off
+                  <input type="checkbox" id="night">
+                  <span class="lever"></span>
+                  On
                </label>
 
 
-             </div>
+            </div>
 
             <h5>Стандартный пресет</h5>
             <div class="theme_color_table">
@@ -113,12 +116,27 @@
             </div>
 
             <h5>Обновления</h5>
-            <a href="https://github.com/JustMonk/chrome-lazy-arm" target="_blank">github.com/JustMonk/chrome-lazy-arm</a>
+            <a href="https://github.com/JustMonk/chrome-lazy-arm"
+               target="_blank">github.com/JustMonk/chrome-lazy-arm</a>
 
          </div>
 
-         <div id="test2" class="col s12">ночной режим добавлен</div>
-         <div id="test3" class="col s12">1) Если по нажатию ничего не происходит - проверь адрес админки, он должен быть /cc-agent/, с тестовой версией /сс-agent-test/ расширение не работает</div>
+         <div id="test2" class="col s12">
+            <iframe src="https://justmonk.github.io/react-firebase-chat-widget/"
+               style="width: 100%; height: 460px; border: none;">
+               Ваш браузер не поддерживает встроенные фреймы!
+            </iframe>
+         </div>
+         <div id="test3" class="col s12" style="padding: 18px;">1) Если по нажатию ничего не происходит - проверь адрес
+            админки, он должен быть
+            /cc-agent/, с тестовой версией /сс-agent-test/ расширение не работает
+            <br>
+            2) Автообновлений нет (хром запрещает приватным расширениям обновляться), поэтому загрузить можно только руками
+            <br>
+            3) Сейчас особой пользы расширение не несет, а весь функционал аналитики рано или поздно и так добавят (ну кроме темной темы мб)
+            <br>
+            4) Последняя версия всегда доступна в репозитории <a href="https://github.com/JustMonk/chrome-lazy-arm">https://github.com/JustMonk/chrome-lazy-arm</a>
+         </div>
       </div>
 
    </div>

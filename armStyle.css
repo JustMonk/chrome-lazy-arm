@@ -5,3 +5,20 @@ header {
 header span {
    color: #fff;
 }
+
+#info-wrapper {
+   display: flex;
+   font-size: 17px;
+}
+
+#info-wrapper span {
+   /*font-weight: bold;*/
+}
+
+#lazy-wrapper {
+   width: 240px;
+}
+
+#queue-wrapper {
+   width: 150px;
+}

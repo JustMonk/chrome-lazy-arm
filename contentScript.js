@@ -140,33 +140,49 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 
 
-//куда вставляем
+//пушим выше шапки
 let targetNode = document.getElementsByTagName('main')[0].lastChild;
+//внутрь флекс контейнера
+let infoWrapper = document.createElement('div');
+infoWrapper.id = 'info-wrapper';
+targetNode.insertAdjacentElement('afterbegin', infoWrapper);
 
-//наш контейнер "бездельников"
+//контейнер "бездельников"
 let lazy = document.createElement('div');
-lazy.id = 'lazy-wrapper'
+lazy.id = 'lazy-wrapper';
 lazy.innerHTML = 'Свободно операторов: ';
-
 let lazyCounter = document.createElement('span');
 lazyCounter.id = 'lazy-counter';
-
 lazy.appendChild(lazyCounter);
+infoWrapper.insertAdjacentElement('beforeend', lazy);
 
-targetNode.insertAdjacentElement('afterbegin', lazy);
+//контейнер очередей
+let queue = document.createElement('div');
+queue.id = 'queue-wrapper';
+queue.innerHTML = 'В очереди: ';
+let queueCounter = document.createElement('span');
+queueCounter.id = 'queue-counter';
+queue.appendChild(queueCounter);
+infoWrapper.insertAdjacentElement('beforeend', queue);
 
 setInterval(() => {
    let tds = document.querySelectorAll('main td span');
+   let queueSpans = document.querySelectorAll('main > :last-child > :last-child > :first-child span');
+
    let counter = 0;
+
+   //свободных
    tds.forEach(val => {
-      if (val.innerHTML == 'ожидание') {
-         counter++;
-         //val.style.color = '#000'
-      }
-      /*else if (val == val.parentElement.children[4]) {
-         val.style.color = '#5f5fc4';
-      }*/ //больше не нужно, уже реализовано
+      if (val.innerHTML == 'ожидание') counter++;
    })
    lazyCounter.innerHTML = counter;
+   
+   //в очереди
+   counter = 0;
+   queueSpans.forEach(val => {
+      if (val.title == 'Вызовов в очередях') counter++;
+   })
+   queueCounter.innerHTML = counter;
+
 }, 1000)
 
