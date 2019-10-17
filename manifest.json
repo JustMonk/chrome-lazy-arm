@@ -1,6 +1,6 @@
 {
    "name": "Lazy ARM",
-   "version": "4.0",
+   "version": "4.1",
    "description": "Обложка для админки, добавляет разные фичи; если не работает проверь адрес - должен быть /cc-agent/ (без слова test); Клик по иконке открывает настройки",
    "manifest_version": 2,
    "permissions": ["contextMenus", "storage"],

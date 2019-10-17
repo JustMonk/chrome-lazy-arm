@@ -8,7 +8,7 @@ function colorFromCookie() {
    currentCookie.forEach(val => {
 
       if (val.split('=')[0].trim() == 'bg') {
-         if (!checkNight()) {
+         if (checkNight() == 'false') {
             document.querySelectorAll('header').forEach(header => {
                //header.style.setProperty('background', val.split('=')[1], 'important');
                //добавляем новый inline-стиль, чтобы избежать асинхронщины
@@ -20,7 +20,7 @@ function colorFromCookie() {
       }
 
       if (val.split('=')[0].trim() == 'font') {
-         if (!checkNight()) {
+         if (checkNight() == 'false') {
             document.querySelectorAll('header').forEach(header => {
                let style = document.createElement('style');
                style.innerHTML = `header { color: ${val.split('=')[1]} !important; } header span { color: ${val.split('=')[1]} !important; }`;
