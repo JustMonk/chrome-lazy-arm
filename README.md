@@ -5,7 +5,7 @@
 P.S: Рано или поздно все это будет добавлено аналитиками (пока не ясно в каком виде), а сейчас можно воспользоваться расширением.
 
 ## Где взять?
-[Скачать по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/4.1/chrome-lazy-arm-4.1.rar)
+[Скачать по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/5.0/chrome-lazy-arm-5.rar)
 
 ![](screenshoot/demo.jpg)
 
@@ -26,7 +26,7 @@ P.S: Рано или поздно все это будет добавлено а
 
 ## Как включить? (инструкция по шагам)
 
-1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/4.1/chrome-lazy-arm-4.1.rar), распаковать;
+1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/5.0/chrome-lazy-arm-5.rar), распаковать;
 2) В адресной строке браузера ввести `chrome://extensions/`
 
 ![](screenshoots/chrome_extensions_path.jpg)
