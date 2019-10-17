@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/version-5.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
 
-Есть ли на свете более бесполезная вещь? А теперь еще и с ночным режимом
+P.S: Рано или поздно все это будет добавлено аналитиками (пока не ясно в каком виде), а сейчас можно воспользоваться расширением.
 
 ## Где взять?
 [Скачать по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/4.1/chrome-lazy-arm-4.1.rar)
@@ -12,14 +12,17 @@
 
 ## Зачем?
 
-Посмотреть количество свободных
+Вывести количество свободных
 
 ![](screenshoots/free.jpg)
 
 Изменить цвет шапки/шрифта (клик по значку расширения открывает настройки)
 
-![](screenshoots/settings.jpg)
+![](screenshoots/settings5.jpg)
 
+Есть возможность переключиться на темную схему
+
+![](screenshoots/dark.jpg)
 
 ## Как включить? (инструкция по шагам)
 
