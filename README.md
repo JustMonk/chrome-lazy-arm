@@ -1,4 +1,6 @@
-## chrome lazy arm 4.1
+## Chrome lazy arm 5.0
+
+![](https://img.shields.io/badge/version-5.0-green)
 
 Есть ли на свете более бесполезная вещь? А теперь еще и с ночным режимом
 
