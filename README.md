@@ -1,6 +1,6 @@
 ## Chrome lazy arm 5.0
 
-![](https://img.shields.io/badge/version-5.0-green)
+![](https://img.shields.io/badge/version-5.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
 
 Есть ли на свете более бесполезная вещь? А теперь еще и с ночным режимом
 
@@ -9,13 +9,10 @@
 
 ![](screenshoot/demo.jpg)
 
-## Известные проблемы
-
-Расширение будет работать только по "боевому" адресу `/cc-agent/`, на тестовый `/cc-agent-test/` заходить не нужно
 
 ## Зачем?
 
-Посмотреть количество свободных (косяк в запросе исправлен)
+Посмотреть количество свободных
 
 ![](screenshoots/free.jpg)
 
