@@ -178,11 +178,9 @@ setInterval(() => {
    lazyCounter.innerHTML = counter;
    
    //в очереди
-   counter = 0;
    queueSpans.forEach(val => {
-      if (val.title == 'Вызов в очередях') counter++;
+      if (val.title == 'Вызов в очередях')  queueCounter.innerHTML = val.innerHTML;
    })
-   queueCounter.innerHTML = counter;
 
 }, 1000)
 
