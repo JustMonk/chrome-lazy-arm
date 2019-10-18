@@ -2,8 +2,6 @@
 
 ![](https://img.shields.io/badge/version-5.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
 
-P.S: Рано или поздно все это будет добавлено аналитиками (пока не ясно в каком виде), а сейчас можно воспользоваться расширением.
-
 ## Где взять?
 [Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/5.0/chrome-lazy-arm-5.rar)
 
