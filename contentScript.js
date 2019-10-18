@@ -180,7 +180,7 @@ setInterval(() => {
    //в очереди
    counter = 0;
    queueSpans.forEach(val => {
-      if (val.title == 'Вызовов в очередях') counter++;
+      if (val.title == 'Вызов в очередях') counter++;
    })
    queueCounter.innerHTML = counter;
 
