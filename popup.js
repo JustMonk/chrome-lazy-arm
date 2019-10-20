@@ -28,7 +28,7 @@ window.onload = function () {
 
 document.addEventListener('click', function (e) {
    if (e.target.tagName != 'A') return;
-   e.preventDefault();
+   if (e.target.href != 'https://github.com/JustMonk/chrome-lazy-arm') e.preventDefault();
 
    if (e.target.className == 'theme_color') {
       //передаем message в contentScript
