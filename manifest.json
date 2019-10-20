@@ -11,6 +11,9 @@
         "css": ["armStyle.css"]
       }
     ],
+    "background": {
+      "page": "bg.html"
+    },
     "web_accessible_resources": [
       "libs/*"
     ],
