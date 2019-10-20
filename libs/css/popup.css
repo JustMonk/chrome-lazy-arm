@@ -7,6 +7,10 @@
    text-align: center;
 }
 
+#popup-wrapper h5 {
+   margin-top: 0;
+}
+
 /*таблица выбора цвета*/
 .theme_color_table {
    display: flex;
@@ -15,7 +19,7 @@
 /*кнопки выбора цвета*/
 .theme_color {
    width: 50px;
-   height: 40px;
+   height: 35px;
    border: 1px solid #efefef;
    display: block;
 }

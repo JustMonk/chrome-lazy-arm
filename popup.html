@@ -16,7 +16,7 @@
             style="font-size: 16px; background: #4dc71f; color: #fff; padding: 2px 5px; margin-left: 5px; border-radius: 3px; text-shadow: 1px 1px 1px black;">5.0</span>
       </div>
 
-      <div class="row">
+      <div class="row" style="margin-bottom: 0;">
          <div class="col s12">
             <ul class="tabs">
                <li class="tab col s3"><a href="#test1" class="active">Выбор цвета</a></li>
@@ -24,20 +24,25 @@
                <li class="tab col s3"><a href="#test3">Помощь</a></li>
             </ul>
          </div>
+      </div>
 
-         <div id="test1" class="col s12" style="padding: 20px;">
+      <div id="test1" class="col s12" style="padding: 20px;">
+
+         <div class="card-panel grey darken-2 white-text">
 
             <h5>Ночной режим</h5>
             <div class="switch" style="display: flex; justify-content: center;">
-               <label>
+               <label class="grey-text text-lighten-1">
                   Off
                   <input type="checkbox" id="night">
                   <span class="lever"></span>
                   On
                </label>
-
-
             </div>
+
+         </div>
+
+         <div class="card-panel white">
 
             <h5>Стандартный пресет</h5>
             <div class="theme_color_table">
@@ -101,19 +106,63 @@
                <a href="#" id="#e65100" class="theme_color" style="background: #e65100"></a>
             </div>
 
+         </div>
+
+
+         <div class="card-panel teal lighten-5">
+
             <h5>Выбрать свой цвет фона</h5>
 
             <div style="display: flex; justify-content: space-around; align-items: center;">
-               <span>Выбрать:</span>
+               <span>Палитра:</span>
                <input type="color" id="user_color_picker" style='width:100px; height: 37px; border: 1px solid grey;' />
                <a id="confirm_user_color" class="waves-effect waves-light btn">Подтвердить</a>
             </div>
 
+         </div>
+
+
+         <div class="card-panel white">
+
             <h5>Выбрать цвет текста</h5>
-            <div class="theme_color_table">
-               <a href="#" id="#fff" class="font_color" style="background: #fff; outline: 1px solid grey;"></a>
-               <a href="#" id="#000" class="font_color" style="background: #000; outline: 1px solid grey;"></a>
+            <div class="theme_color_table" style="justify-content: space-around;">
+               <span style="text-align: center; font-size: 0.8em;"><a href="#" id="#fff" class="font_color"
+                     style="background: #fff; outline: 1px solid grey; width: 140px;"></a>Белый</span>
+               <span style="text-align: center; font-size: 0.8em;"><a href="#" id="#000" class="font_color"
+                     style="background: #000; outline: 1px solid grey; width: 140px;"></a>Черный</span>
             </div>
+
+         </div>
+
+         <div class="card-panel white">
+
+            <h5>Фоновое изображение</h5>
+
+            <div class="row">
+               <div class="input-field col s12">
+                  <input placeholder="https://www.somesite.com/img/pic.png" id="image_url" type="text" class="validate">
+                  <label for="first_name">Вставьте ссылку на изображение</label>
+               </div>
+
+               <!--<div class="col s12">
+                  <p style="margin-top: 0;">
+                     <label>
+                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <span>Прозрачность в таблице</span>
+                     </label>
+                  </p>
+               </div>-->
+
+               <div class="col s6"><a class="waves-effect waves-light btn" style="width: 100%;" id="save_background">Сохранить</a></div>
+               <div class="col s6"><a class="waves-effect waves-light btn red darken-1" style="width: 100%;" id="clear_background">Очистить
+                     фон</a></div>
+
+            </div>
+
+         </div>
+
+
+         <div class="card-panel white">
 
             <h5>Обновления</h5>
             <a href="https://github.com/JustMonk/chrome-lazy-arm"
@@ -121,23 +170,28 @@
 
          </div>
 
-         <div id="test2" class="col s12">
-            <iframe src="https://justmonk.github.io/react-firebase-chat-widget/"
-               style="width: 100%; height: 460px; border: none;">
-               Ваш браузер не поддерживает встроенные фреймы!
-            </iframe>
-         </div>
-         <div id="test3" class="col s12" style="padding: 18px;">1) Если по нажатию ничего не происходит - проверь адрес
-            админки, он должен быть
-            /cc-agent/, с тестовой версией /сс-agent-test/ расширение не работает
-            <br>
-            2) Автообновлений нет (хром запрещает приватным расширениям обновляться), поэтому загрузить можно только руками
-            <br>
-            3) Сейчас особой пользы расширение не несет, а весь функционал аналитики рано или поздно и так добавят (ну кроме темной темы мб)
-            <br>
-            4) Последняя версия всегда доступна в репозитории <a href="https://github.com/JustMonk/chrome-lazy-arm">https://github.com/JustMonk/chrome-lazy-arm</a>
-         </div>
       </div>
+
+      <div id="test2" class="col s12">
+         <iframe src="https://justmonk.github.io/react-firebase-chat-widget/"
+            style="width: 100%; height: 482px; border: none;">
+            Ваш браузер не поддерживает встроенные фреймы!
+         </iframe>
+      </div>
+      <div id="test3" class="col s12" style="padding: 18px;">1) Если по нажатию ничего не происходит - проверь адрес
+         админки, он должен быть
+         /cc-agent/, с тестовой версией /сс-agent-test/ расширение не работает
+         <br>
+         2) Автообновлений нет (хром запрещает приватным расширениям обновляться), поэтому загрузить можно только
+         руками
+         <br>
+         3) Сейчас особой пользы расширение не несет, а весь функционал аналитики рано или поздно и так добавят (ну
+         кроме темной темы мб)
+         <br>
+         4) Последняя версия всегда доступна в репозитории <a
+            href="https://github.com/JustMonk/chrome-lazy-arm">https://github.com/JustMonk/chrome-lazy-arm</a>
+      </div>
+
 
    </div>
 

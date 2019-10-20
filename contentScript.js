@@ -8,9 +8,8 @@ function colorFromCookie() {
    currentCookie.forEach(val => {
 
       if (val.split('=')[0].trim() == 'bg') {
-         if (checkNight() == 'false') {
+         if (!checkNight()) {
             document.querySelectorAll('header').forEach(header => {
-               //header.style.setProperty('background', val.split('=')[1], 'important');
                //добавляем новый inline-стиль, чтобы избежать асинхронщины
                let style = document.createElement('style');
                style.innerHTML = `header { background: ${val.split('=')[1]} !important; }`;
@@ -20,7 +19,7 @@ function colorFromCookie() {
       }
 
       if (val.split('=')[0].trim() == 'font') {
-         if (checkNight() == 'false') {
+         if (!checkNight()) {
             document.querySelectorAll('header').forEach(header => {
                let style = document.createElement('style');
                style.innerHTML = `header { color: ${val.split('=')[1]} !important; } header span { color: ${val.split('=')[1]} !important; }`;
@@ -31,7 +30,7 @@ function colorFromCookie() {
 
       if (val.split('=')[0].trim() == 'night') {
          if (nightStyle === undefined) nightStyle = document.createElement('style');
-         
+
          if (val.split('=')[1].trim() == 'true') {
             document.querySelectorAll('header').forEach(header => {
                nightStyle.innerHTML = `
@@ -74,21 +73,18 @@ function colorFromCookie() {
                   color: #fff !important;
                }
                
-               /*main last last first first first*/
                main> :last-child> :last-child> :first-child> :first-child > :first-child {
                   background: #2c2c2c !important;
                }
-               /*main last last first first first*/
+
                main> :last-child> :last-child> :first-child> :first-child > :first-child p, span {
                   color: #fff !important;
                }
                
-               /*main last last first last*/
                main> :last-child> :last-child> :first-child> :last-child {
                   background: #383838 !important;
                }
                
-               /*main last last first last first first*/
                main> :last-child> :last-child> :first-child> :last-child > :first-child > :first-child {
                   background: #2c2c2c !important;
                }
@@ -97,14 +93,37 @@ function colorFromCookie() {
                main> :first-child> :first-child a, span, p, svg {
                   color: #fff !important;
                }
+
+               div[role="dialog"] span, div[role="dialog"] svg {
+                  color: black !important;
+               }
+
+               input {
+                  color: #fff !important;
+               }
+
+               div[role="document"] span, div[role="document"] svg{
+                  color: black !important;
+               }
                `;
                document.getElementsByTagName('head')[0].appendChild(nightStyle);
             })
          } else {
             nightStyle.remove();
          }
-         
       }
+
+      if (val.split('=')[0].trim() == 'backgroundImage') {
+         let style = document.createElement('style');
+         if (!checkNight() && checkBackground()) {
+            style.innerHTML = `.layout { ${val.slice(val.indexOf('=')+1)} }`;
+            document.getElementsByTagName('head')[0].appendChild(style);
+         } else {
+            style.innerHTML = `.layout { background: inherit !important }`;
+            document.getElementsByTagName('head')[0].appendChild(style);
+         }
+      }
+
    })
 }
 
@@ -116,7 +135,30 @@ function checkNight() {
          result = val.split('=')[1];
       }
    })
-   if (result === undefined) result = false;
+   return (result == 'true') ? true : false;
+}
+
+function checkBackground() {
+   let currentCookie = document.cookie.split(';');
+   let result;
+   currentCookie.forEach(val => {
+      
+      if (val.split('=')[0].trim() == 'isImage') {
+         result = val.split('=')[1];
+      }
+   })
+   return (result == 'true') ? true : false;
+}
+
+function getBackgroundURL() {
+   let currentCookie = document.cookie.split(';');
+   let result;
+   currentCookie.forEach(val => {
+      if (val.split('=')[0].trim() == 'backgroundImage') {
+         result = val.slice(val.indexOf('=')+1);
+         result = result.split(`'`)[1];
+      }
+   })
    return result;
 }
 
@@ -135,6 +177,19 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
    if (request.night !== undefined) {
       document.cookie = `night=${request.night}; expires=${new Date('2040')}`;
       colorFromCookie();
+   }
+   if (request.isImage !== undefined) {
+      if (request.isImage == true) {
+         document.cookie = `backgroundImage=${request.backgroundImage}; expires=${new Date('2040')}`;
+         document.cookie = `isImage=${request.isImage}; expires=${new Date('2040')}`;
+         colorFromCookie();
+      } else {
+         document.cookie = `isImage=false; expires=${new Date('2040')}`;
+         colorFromCookie();
+      }
+   }
+   if (request.getBackgroundURL) {
+      sendResponse({ backgroundURL: getBackgroundURL() });
    }
 
 });
@@ -176,10 +231,10 @@ setInterval(() => {
       if (val.innerHTML == 'ожидание') counter++;
    })
    lazyCounter.innerHTML = counter;
-   
-   //в очереди
+
+   //в очереди (просто берется из готового счетчика 7-0-1 <--)
    queueSpans.forEach(val => {
-      if (val.title == 'Вызов в очередях')  queueCounter.innerHTML = val.innerHTML;
+      if (val.title == 'Вызов в очередях') queueCounter.innerHTML = val.innerHTML;
    })
 
 }, 1000)

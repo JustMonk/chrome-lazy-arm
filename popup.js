@@ -3,19 +3,27 @@ var instance = M.Tabs.init(document.querySelector('.tabs'), {});
 
 //проверяем toggle при открытии
 window.onload = function () {
-   console.log('onload')
    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       chrome.tabs.sendMessage(tabs[0].id, { checkNight: '1' }, response => {
-         console.log(response);
-         if (response.isNight == 'false') {
+         if (response === undefined) return;
+         if (!response.isNight) {
             document.getElementById('night').removeAttribute('checked');
-         }
-         if (response.isNight == 'true') {
+         } else {
             document.getElementById('night').setAttribute('checked', 'true');
-         } 
-         //document.getElementById('night').checked = true;
+         }
       });
    });
+
+
+   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, { getBackgroundURL: '1' }, response => {
+         //if (response === undefined) return;
+         if (response.backgroundURL) {
+            document.getElementById('image_url').value = response.backgroundURL;
+         }
+      });
+   });
+
 }
 
 document.addEventListener('click', function (e) {
@@ -39,6 +47,26 @@ document.addEventListener('click', function (e) {
       let colorInput = document.getElementById('user_color_picker');
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
          chrome.tabs.sendMessage(tabs[0].id, { bg: colorInput.value }, response => { });
+      });
+   }
+
+   if (e.target.id == 'save_background') {
+      //текущий введенный URL (валидаций никаких нет)
+      let background = `background: center/cover url('${document.getElementById('image_url').value}') !important`;
+      console.log(background);
+      
+      //тут будут настройки
+      //TODO проверяем чекбоксы и добавляем параметры к бэкграунду
+
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+         chrome.tabs.sendMessage(tabs[0].id, { backgroundImage: background, isImage: true}, response => { });
+      });
+   }
+
+   if (e.target.id == 'clear_background') {
+      console.log('отправили clear')
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+         chrome.tabs.sendMessage(tabs[0].id, { isImage: false }, response => { });
       });
    }
 
