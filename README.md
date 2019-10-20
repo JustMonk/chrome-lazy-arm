@@ -1,9 +1,9 @@
-## Chrome lazy arm 5.0
+## Chrome lazy arm 6.0
 
-![](https://img.shields.io/badge/version-5.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
+![](https://img.shields.io/badge/version-6.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## Где взять?
-[Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/5.0/chrome-lazy-arm-5.rar)
+[Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/6.0/chrome-lazy-arm-6.rar)
 
 ![](screenshoot/demo.jpg)
 
@@ -16,7 +16,12 @@
 
 Изменить цвет шапки/шрифта (клик по значку расширения открывает настройки)
 
-![](screenshoots/settings5.jpg)
+![](screenshoots/settings.jpg)
+
+Можно добавить ссылку для изображения в фон (но пока без дополнительных опций, я бы не злоупотреблял)
+
+![](screenshoots/bg.png)
+
 
 Есть возможность переключиться на темную схему
 
@@ -24,7 +29,7 @@
 
 ## Как включить? (инструкция по шагам)
 
-1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/5.0/chrome-lazy-arm-5.rar), распаковать;
+1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/6.0/chrome-lazy-arm-6.rar), распаковать;
 2) В адресной строке браузера ввести `chrome://extensions/`
 
 ![](screenshoots/chrome_extensions_path.jpg)
