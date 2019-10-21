@@ -207,12 +207,12 @@ function queuePlace() {
    //за 1 проход
    Array.from(document.querySelector('table').rows).forEach(val => {
       if (val.cells[val.cells.length-2].firstChild.innerHTML == 'ожидание') {
-         if (val.cells[0].innerHTML == user) userTiming = +val.cells[val.cells.length-1].innerHTML.split(':').join('');
+         if (val.cells[0].innerHTML.trim() == user) userTiming = +val.cells[val.cells.length-1].innerHTML.split(':').join('');
          else +queueTiming.push(val.cells[val.cells.length-1].innerHTML.split(':').join(''));
       }
    });
    
-   return queueTiming.filter(val => val > userTiming).length;
+   return queueTiming.filter(val => val > userTiming).length + 1;
 }
 
 //пушим выше шапки
@@ -243,7 +243,7 @@ infoWrapper.insertAdjacentElement('beforeend', queue);
 //в очереди на звонок
 let wait = document.createElement('div');
 wait.id = 'wait-wrapper';
-wait.innerHTML = 'В очереди: ';
+wait.innerHTML = '';
 infoWrapper.insertAdjacentElement('beforeend', wait);
 
 setInterval(() => {
@@ -266,7 +266,7 @@ setInterval(() => {
    //место в очереди
    //приоритет на звонок
    if (document.querySelector('main > :last-child > :last-child > :first-child > :first-child > :first-child > :nth-child(2) > span').innerHTML.split(' ')[0].trim().toLowerCase() == 'ожидание') {
-      wait.innerHTML = `В очереди на звонок: ${queuePlace()}`
+      wait.innerHTML = `Входящих до звонка: ${queuePlace()} <span class="beta">beta</span>`
    } else {
       wait.innerHTML = '';
    }

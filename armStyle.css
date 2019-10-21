@@ -22,3 +22,12 @@ header span {
 #wait-wrapper {
    width: 250px;
 }
+
+.beta {
+   font-weight: 300;
+   font-size: 0.8rem;
+   color: #fff;
+   background-color: #26a69a;
+   border-radius: 2px;
+   padding: 0 6px;
+}
