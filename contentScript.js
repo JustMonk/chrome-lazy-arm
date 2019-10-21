@@ -195,6 +195,26 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 
 
+function queuePlace() {
+   //УСЛОВИЕ == ЮЗЕР В САМ В ОЖИДАНИИ!!
+   //fxd в таймере
+
+   let queueTiming = [];
+   let userTiming = 0;
+
+   let user = `${document.querySelector('[aria-label="Профиль"] img').alt.split(' ')[0]} ${document.querySelector('[aria-label="Профиль"] img').alt.split(' ')[1]}`;
+   
+   //за 1 проход
+   Array.from(document.querySelector('table').rows).forEach(val => {
+      if (val.cells[val.cells.length-2].firstChild.innerHTML == 'ожидание') {
+         if (val.cells[0].innerHTML == user) userTiming = +val.cells[val.cells.length-1].innerHTML.split(':').join('');
+         else +queueTiming.push(val.cells[val.cells.length-1].innerHTML.split(':').join(''));
+      }
+   });
+   
+   return queueTiming.filter(val => val > userTiming).length;
+}
+
 //пушим выше шапки
 let targetNode = document.getElementsByTagName('main')[0].lastChild;
 //внутрь флекс контейнера
@@ -220,6 +240,12 @@ queueCounter.id = 'queue-counter';
 queue.appendChild(queueCounter);
 infoWrapper.insertAdjacentElement('beforeend', queue);
 
+//в очереди на звонок
+let wait = document.createElement('div');
+wait.id = 'wait-wrapper';
+wait.innerHTML = 'В очереди: ';
+infoWrapper.insertAdjacentElement('beforeend', wait);
+
 setInterval(() => {
    let tds = document.querySelectorAll('main td span');
    let queueSpans = document.querySelectorAll('main > :last-child > :last-child > :first-child span');
@@ -236,6 +262,15 @@ setInterval(() => {
    queueSpans.forEach(val => {
       if (val.title == 'Вызов в очередях') queueCounter.innerHTML = val.innerHTML;
    })
+
+   //место в очереди
+   //приоритет на звонок
+   if (document.querySelector('main > :last-child > :last-child > :first-child > :first-child > :first-child > :nth-child(2) > span').innerHTML.split(' ')[0].trim().toLowerCase() == 'ожидание') {
+      wait.innerHTML = `В очереди на звонок: ${queuePlace()}`
+   } else {
+      wait.innerHTML = '';
+   }
+   
 
 }, 1000)
 
