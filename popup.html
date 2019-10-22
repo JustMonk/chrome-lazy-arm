@@ -13,7 +13,7 @@
 
       <div style="display: flex; align-items: center; justify-content: center;">
          <h4>Настройка Lazy-ARM</h4> <span
-            style="font-size: 16px; background: #4dc71f; color: #fff; padding: 2px 5px; margin-left: 5px; border-radius: 3px; text-shadow: 1px 1px 1px black;">6.0</span>
+            style="font-size: 16px; background: #f48041; color: #fff; padding: 2px 5px; margin-left: 5px; border-radius: 3px; text-shadow: 1px 1px 1px black;">7.0</span>
       </div>
 
       <div class="row" style="margin-bottom: 0;">
@@ -26,7 +26,7 @@
          </div>
       </div>
 
-      <div id="test1" class="col s12" style="padding: 20px;">
+      <div id="test1" class="col s12" style="padding: 20px; background: #f5f5f5;">
 
          <div class="card-panel grey darken-2 white-text">
 
@@ -125,11 +125,29 @@
          <div class="card-panel white">
 
             <h5>Выбрать цвет текста</h5>
-            <div class="theme_color_table" style="justify-content: space-around;">
-               <span style="text-align: center; font-size: 0.8em;"><a href="#" id="#fff" class="font_color"
-                     style="background: #fff; outline: 1px solid grey; width: 140px;"></a>Белый</span>
-               <span style="text-align: center; font-size: 0.8em;"><a href="#" id="#000" class="font_color"
-                     style="background: #000; outline: 1px solid grey; width: 140px;"></a>Черный</span>
+
+            <div class="row" style="display: flex; align-items: center; border-bottom: 1px solid #f1f1f1; padding: 10px 30px; margin-bottom: 0;">
+               <div class="col s8">Шапка:</div>
+               <div class="col s4" style="display: flex; justify-content: space-around;">
+                  <a href="#" data-target="header" data-color="#fff" class="font_color" style="background: #fff;"></a>
+                  <a href="#" data-target="header" data-color="#000" class="font_color" style="background: #000;"></a>
+               </div>
+            </div>
+
+            <div class="row" style="display: flex; align-items: center; border-bottom: 1px solid #f1f1f1; padding: 10px 30px; margin-bottom: 0;">
+               <div class="col s8">Боковое меню:</div>
+               <div class="col s4" style="display: flex; justify-content: space-around;">
+                  <a href="#" data-target="side" data-color="#fff" class="font_color" style="background: #fff;"></a>
+                  <a href="#" data-target="side" data-color="#000" class="font_color" style="background: #000;"></a>
+               </div>
+            </div>
+
+            <div class="row" style="display: flex; align-items: center; border-bottom: 1px solid #f1f1f1; padding: 10px 30px; margin-bottom: 0;">
+               <div class="col s8">Инфо-панель (кастом):</div>
+               <div class="col s4" style="display: flex; justify-content: space-around;">
+                  <a href="#" data-target="info" data-color="#fff" class="font_color" style="background: #fff;"></a>
+                  <a href="#" data-target="info" data-color="#000" class="font_color" style="background: #000;"></a>
+               </div>
             </div>
 
          </div>
@@ -145,17 +163,19 @@
                </div>
                <p style="font-size: 11px; text-align: center;">P.S: к темной схеме фон не применяется</p>
 
-               <!--<div class="col s12">
+               <div class="col s12">
                   <p style="margin-top: 0;">
                      <label>
-                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <input type="checkbox" id="fade_table" class="filled-in" />
                         <span>Прозрачность в таблице</span>
                      </label>
                   </p>
-               </div>-->
+               </div>
 
-               <div class="col s6"><a class="waves-effect waves-light btn" style="width: 100%;" id="save_background">Сохранить</a></div>
-               <div class="col s6"><a class="waves-effect waves-light btn red darken-1" style="width: 100%;" id="clear_background">Очистить
+               <div class="col s6"><a class="waves-effect waves-light btn" style="width: 100%;"
+                     id="save_background">Сохранить</a></div>
+               <div class="col s6"><a class="waves-effect waves-light btn red darken-1" style="width: 100%;"
+                     id="clear_background">Очистить
                      фон</a></div>
 
             </div>
@@ -189,8 +209,8 @@
          3) Сейчас особой пользы расширение не несет, а весь функционал аналитики рано или поздно и так добавят (ну
          кроме темной темы мб)
          <br>
-         4) Последняя версия всегда доступна в репозитории <a
-            href="https://github.com/JustMonk/chrome-lazy-arm" target="_blank">https://github.com/JustMonk/chrome-lazy-arm</a>
+         4) Последняя версия всегда доступна в репозитории <a href="https://github.com/JustMonk/chrome-lazy-arm"
+            target="_blank">https://github.com/JustMonk/chrome-lazy-arm</a>
       </div>
 
 

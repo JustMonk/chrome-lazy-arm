@@ -20,9 +20,17 @@ function colorFromCookie() {
 
       if (val.split('=')[0].trim() == 'font') {
          if (!checkNight()) {
+            let fontSettings = JSON.parse(val.split('=')[1]);
             document.querySelectorAll('header').forEach(header => {
                let style = document.createElement('style');
-               style.innerHTML = `header { color: ${val.split('=')[1]} !important; } header span { color: ${val.split('=')[1]} !important; }`;
+               style.innerHTML = `
+               /*head*/
+               header { color: ${fontSettings.header !== undefined ? fontSettings.header : ''} !important; } header span { color: ${fontSettings.header !== undefined ? fontSettings.header : ''} !important; }
+               /*side*/
+               main > :first-child > :first-child * { color: ${fontSettings.side !== undefined ? fontSettings.side : ''} !important }
+               /*info*/
+               #info-wrapper { color: ${fontSettings.info !== undefined ? fontSettings.info : ''} !important }
+               `;
                document.getElementsByTagName('head')[0].appendChild(style);
             })
          }
@@ -114,12 +122,26 @@ function colorFromCookie() {
       }
 
       if (val.split('=')[0].trim() == 'backgroundImage') {
+         let backgroundSettings;
+         
+         try {
+            backgroundSettings = JSON.parse(val.split('=')[1]);
+         } catch(e) {
+            backgroundSettings = {background: `background: inherit !important;`, fade: false} //default value
+         }
+         
          let style = document.createElement('style');
          if (!checkNight() && checkBackground()) {
-            style.innerHTML = `.layout { ${val.slice(val.indexOf('=')+1)} }`;
+            style.innerHTML = `
+            .layout { ${backgroundSettings.background} }
+            main > :last-child > :last-child > :last-child > :first-child  { background: ${backgroundSettings.fade ? "rgba(255, 255, 255, 0.80)" : "rgba(255, 255, 255, 1)"} !important; }
+            `;
             document.getElementsByTagName('head')[0].appendChild(style);
          } else {
-            style.innerHTML = `.layout { background: inherit !important }`;
+            style.innerHTML = `
+            .layout { background: inherit !important }
+            main > :last-child > :last-child > :last-child > :first-child  { background: rgba(255, 255, 255, 1) !important; }
+            `;
             document.getElementsByTagName('head')[0].appendChild(style);
          }
       }
@@ -162,13 +184,26 @@ function getBackgroundURL() {
    return result;
 }
 
+function getCurrentFont() {
+   let currentCookie = document.cookie.split(';');
+   //fontObj = [header="", side="", info=""]
+   let fontObj;
+   currentCookie.forEach(val => {
+      if (val.split('=')[0].trim() == 'font') {
+         fontObj = JSON.parse(val.split('=')[1]);
+      }
+   })
+   return fontObj;
+}
+
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
    if (request.bg) {
       document.cookie = `bg=${request.bg}; expires=${new Date('2040')}`;
       colorFromCookie();
    }
    if (request.font) {
-      document.cookie = `font=${request.font}; expires=${new Date('2040')}`;
+      let mergeFont = Object.assign(getCurrentFont(), request.font)
+      document.cookie = `font=${JSON.stringify(mergeFont)}; expires=${new Date('2040')}`;
       colorFromCookie();
    }
    if (request.checkNight) {
@@ -180,7 +215,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
    }
    if (request.isImage !== undefined) {
       if (request.isImage == true) {
-         document.cookie = `backgroundImage=${request.backgroundImage}; expires=${new Date('2040')}`;
+         document.cookie = `backgroundImage=${JSON.stringify(request.background)}; expires=${new Date('2040')}`;
          document.cookie = `isImage=${request.isImage}; expires=${new Date('2040')}`;
          colorFromCookie();
       } else {
@@ -196,9 +231,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 
 function queuePlace() {
-   //УСЛОВИЕ == ЮЗЕР В САМ В ОЖИДАНИИ!!
-   //fxd в таймере
-
    let queueTiming = [];
    let userTiming = 0;
 

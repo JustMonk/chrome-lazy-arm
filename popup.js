@@ -38,8 +38,12 @@ document.addEventListener('click', function (e) {
    }
 
    if (e.target.className == 'font_color') {
+      let requestObj = {};
+
+      requestObj[e.target.getAttribute('data-target')] = e.target.getAttribute('data-color');
+
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-         chrome.tabs.sendMessage(tabs[0].id, { font: e.target.id }, response => { });
+         chrome.tabs.sendMessage(tabs[0].id, { font: requestObj }, response => { });
       });
    }
 
@@ -52,26 +56,22 @@ document.addEventListener('click', function (e) {
 
    if (e.target.id == 'save_background') {
       //текущий введенный URL (валидаций никаких нет)
-      let background = `background: center/cover url('${document.getElementById('image_url').value}') !important`;
-      console.log(background);
-      
-      //тут будут настройки
-      //TODO проверяем чекбоксы и добавляем параметры к бэкграунду
+      let requestObj = {background: `background: center/cover url('${document.getElementById('image_url').value}') !important`, fade: document.getElementById('fade_table').checked ? true : false};
+      console.log(requestObj);
+
 
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-         chrome.tabs.sendMessage(tabs[0].id, { backgroundImage: background, isImage: true}, response => { });
+         chrome.tabs.sendMessage(tabs[0].id, { background: requestObj, isImage: true }, response => { });
       });
    }
 
    if (e.target.id == 'clear_background') {
-      console.log('отправили clear')
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
          chrome.tabs.sendMessage(tabs[0].id, { isImage: false }, response => { });
       });
    }
 
 });
-
 
 //switch
 //night=[true/false]
