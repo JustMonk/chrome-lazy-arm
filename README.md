@@ -1,12 +1,25 @@
-## Chrome lazy arm 6.0
+## Chrome lazy arm 7.0
 
-![](https://img.shields.io/badge/version-6.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
+![](https://img.shields.io/badge/version-7.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## Где взять?
-[Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/6.0/chrome-lazy-arm-6.rar)
+[Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/7.0/chrome-lazy-arm-7.rar)
 
 ![](screenshoot/demo.jpg)
 
+## Что нового?
+
+1) Возможность посчитать когда ждать "свой" входящий
+
+![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/queue.jpg)
+
+2) Можно настроить цвет шрифта для отдельных элементов
+
+![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/font.jpg)
+
+3) Таблицу поверх фона можно сделать полупрозрачной
+
+![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/bg.png)
 
 ## Зачем?
 
@@ -31,7 +44,7 @@
 
 ## Как включить? (инструкция по шагам)
 
-1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/6.0/chrome-lazy-arm-6.rar), распаковать;
+1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/7.0/chrome-lazy-arm-7.rar), распаковать;
 2) В адресной строке браузера ввести `chrome://extensions/`
 
 ![](screenshoots/chrome_extensions_path.jpg)
