@@ -13,6 +13,8 @@
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/queue.jpg)
 
+P.S: количество свободных уже добавили во вкладке очередей
+
 2) Можно настроить цвет шрифта для отдельных элементов
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/font.jpg)
