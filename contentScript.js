@@ -197,7 +197,11 @@ function getCurrentFont() {
    let fontObj;
    currentCookie.forEach(val => {
       if (val.split('=')[0].trim() == 'font') {
-         fontObj = JSON.parse(val.split('=')[1]);
+         try {
+            fontObj = JSON.parse(val.split('=')[1]);
+         } catch(e) {
+            fontObj = {header: "#fff", side: "#000", info: "#000"}
+         }
       }
    })
    return fontObj;
