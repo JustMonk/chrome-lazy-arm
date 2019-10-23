@@ -20,7 +20,14 @@ function colorFromCookie() {
 
       if (val.split('=')[0].trim() == 'font') {
          if (!checkNight()) {
-            let fontSettings = JSON.parse(val.split('=')[1]);
+            let fontSettings;
+
+            try {
+               fontSettings = JSON.parse(val.split('=')[1]);
+            } catch(e) {
+               fontSettings = {header: '#fff', side: '#000', info: '#000'} //default value
+            }
+
             document.querySelectorAll('header').forEach(header => {
                let style = document.createElement('style');
                style.innerHTML = `
