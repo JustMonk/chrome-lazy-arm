@@ -120,6 +120,13 @@ function colorFromCookie() {
                div[role="document"] span, div[role="document"] svg{
                   color: black !important;
                }
+
+               /*freeze head*/
+               header { color: #fff !important; } header span { color: #fff !important; }
+               /*freeze side*/
+               main > :first-child > :first-child * { color: #fff !important }
+               /*freeze info*/
+               #info-wrapper { color: #fff !important }
                `;
                document.getElementsByTagName('head')[0].appendChild(nightStyle);
             })
