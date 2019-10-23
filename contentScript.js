@@ -2,6 +2,8 @@
 colorFromCookie();
 //global
 var nightStyle;
+var longTimer;
+setRetailStats();
 
 function colorFromCookie() {
    let currentCookie = document.cookie.split(';');
@@ -24,8 +26,8 @@ function colorFromCookie() {
 
             try {
                fontSettings = JSON.parse(val.split('=')[1]);
-            } catch(e) {
-               fontSettings = {header: '#fff', side: '#000', info: '#000'} //default value
+            } catch (e) {
+               fontSettings = { header: '#fff', side: '#000', info: '#000' } //default value
             }
 
             document.querySelectorAll('header').forEach(header => {
@@ -137,13 +139,13 @@ function colorFromCookie() {
 
       if (val.split('=')[0].trim() == 'backgroundImage') {
          let backgroundSettings;
-         
+
          try {
             backgroundSettings = JSON.parse(val.split('=')[1]);
-         } catch(e) {
-            backgroundSettings = {background: `background: inherit !important;`, fade: false} //default value
+         } catch (e) {
+            backgroundSettings = { background: `background: inherit !important;`, fade: false } //default value
          }
-         
+
          let style = document.createElement('style');
          if (!checkNight() && checkBackground()) {
             style.innerHTML = `
@@ -178,7 +180,7 @@ function checkBackground() {
    let currentCookie = document.cookie.split(';');
    let result;
    currentCookie.forEach(val => {
-      
+
       if (val.split('=')[0].trim() == 'isImage') {
          result = val.split('=')[1];
       }
@@ -191,7 +193,7 @@ function getBackgroundURL() {
    let result;
    currentCookie.forEach(val => {
       if (val.split('=')[0].trim() == 'backgroundImage') {
-         result = val.slice(val.indexOf('=')+1);
+         result = val.slice(val.indexOf('=') + 1);
          result = result.split(`'`)[1];
       }
    })
@@ -206,12 +208,55 @@ function getCurrentFont() {
       if (val.split('=')[0].trim() == 'font') {
          try {
             fontObj = JSON.parse(val.split('=')[1]);
-         } catch(e) {
-            fontObj = {header: "#fff", side: "#000", info: "#000"}
+         } catch (e) {
+            fontObj = { header: "#fff", side: "#000", info: "#000" }
          }
       }
    })
    return fontObj;
+}
+
+/*отображение статистики ритейл (по большей части для дебага)*/
+function getRetailStats() {
+   //вовзращает true/false если статистика отображается
+   let currentCookie = document.cookie.split(';');
+   let result;
+   currentCookie.forEach(val => {
+      if (val.split('=')[0].trim() == 'showRetailStats') {
+         result = val.split('=')[1];
+      }
+   })
+   return result == 'true' ? true : false;
+}
+function setRetailStats() {
+   clearInterval(longTimer);
+   if (getRetailStats()) {
+      if (!document.getElementById('stats-wrapper')) {
+         let statsWrapper = document.createElement('div');
+         statsWrapper.id = 'stats-wrapper';
+         statsWrapper.innerHTML = 'Загрузка...'
+         document.querySelector('main > :first-child > :first-child').appendChild(statsWrapper);
+      }
+      longTimer = setInterval(() => {
+         let socket = new WebSocket("wss://aster-mp5.kontur/ws");
+         socket.onmessage = function (event) {
+            let respObj = JSON.parse(event.data);
+            socket.close();
+
+            //add stats
+            document.getElementById('stats-wrapper').innerHTML = `
+            <p>[EDI] Принято: ${respObj.queues['76032'].answered} | Потеряно: ${respObj.queues['76032'].abandoned}</p>
+            <p>[Merc] Принято: ${respObj.queues['79084'].answered} | Потеряно: ${respObj.queues['79084'].abandoned}</p>
+            <p>[Sverka] Принято: ${respObj.queues['79031'].answered} | Потеряно: ${respObj.queues['79031'].abandoned}</p>
+            <p>[Postavki] Принято: ${respObj.queues['76205'].answered} | Потеряно: ${respObj.queues['76205'].abandoned}</p>
+            <p>[Factor] Принято: ${respObj.queues['76260'].answered} | Потеряно: ${respObj.queues['76260'].abandoned}</p>
+            `;
+         };
+      }, 5000);
+   } else {
+      if (document.getElementById('stats-wrapper')) document.getElementById('stats-wrapper').remove();
+      clearInterval(longTimer);
+   }
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -244,6 +289,17 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
    if (request.getBackgroundURL) {
       sendResponse({ backgroundURL: getBackgroundURL() });
    }
+   if (request.showRetailStats !== undefined) {
+      if (request.showRetailStats == true) {
+         document.cookie = `showRetailStats=${request.showRetailStats}; expires=${new Date('2040')}`;
+      } else {
+         document.cookie = `showRetailStats=false; expires=${new Date('2040')}`;
+      }
+      setRetailStats();
+   }
+   if (request.checkRetailStats) {
+      sendResponse({ checkRetailStats: getRetailStats() });
+   }
 
 });
 
@@ -253,15 +309,15 @@ function queuePlace() {
    let userTiming = 0;
 
    let user = `${document.querySelector('[aria-label="Профиль"] img').alt.split(' ')[0]} ${document.querySelector('[aria-label="Профиль"] img').alt.split(' ')[1]}`;
-   
+
    //за 1 проход
    Array.from(document.querySelector('table').rows).forEach(val => {
-      if (val.cells[val.cells.length-2].firstChild.innerHTML == 'ожидание') {
-         if (val.cells[0].innerHTML.trim() == user) userTiming = +val.cells[val.cells.length-1].innerHTML.split(':').join('');
-         else +queueTiming.push(val.cells[val.cells.length-1].innerHTML.split(':').join(''));
+      if (val.cells[val.cells.length - 2].firstChild.innerHTML == 'ожидание') {
+         if (val.cells[0].innerHTML.trim() == user) userTiming = +val.cells[val.cells.length - 1].innerHTML.split(':').join('');
+         else +queueTiming.push(val.cells[val.cells.length - 1].innerHTML.split(':').join(''));
       }
    });
-   
+
    return queueTiming.filter(val => val > userTiming).length + 1;
 }
 
@@ -320,7 +376,7 @@ setInterval(() => {
    } else {
       wait.innerHTML = '';
    }
-   
+
 
 }, 1000)
 

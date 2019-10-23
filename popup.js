@@ -24,6 +24,20 @@ window.onload = function () {
       });
    });
 
+   //check aditional settings (пока только одна)
+   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, { checkRetailStats: '1' }, response => {
+         //if (response === undefined) return;
+         if (response.checkRetailStats) {
+            if (!response.checkRetailStats) {
+               document.getElementById('retail_stats').removeAttribute('checked');
+            } else {
+               document.getElementById('retail_stats').setAttribute('checked', 'true');
+            }
+         }
+      });
+   });
+
 }
 
 document.addEventListener('click', function (e) {
@@ -84,4 +98,11 @@ document.addEventListener('change', function (e) {
          chrome.tabs.sendMessage(tabs[0].id, { night: document.getElementById('night').checked }, response => { });
       });
    }
+
+   if (e.target.id == 'retail_stats') {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+         chrome.tabs.sendMessage(tabs[0].id, { showRetailStats: document.getElementById('retail_stats').checked }, response => { });
+      });
+   }
+
 });
