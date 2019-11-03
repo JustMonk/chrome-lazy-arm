@@ -1,9 +1,9 @@
-## Chrome lazy arm 7.0
+## Chrome lazy arm 7.1
 
-![](https://img.shields.io/badge/version-7.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
+![](https://img.shields.io/badge/version-7.1-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## Где взять?
-[Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/7.0/chrome-lazy-arm-7.rar)
+[Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/7.1/chrome-lazy-arm-7.1.rar)
 
 ![](screenshoot/demo.jpg)
 
@@ -19,7 +19,7 @@ P.S: количество свободных уже добавили во вкл
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/font.jpg)
 
-3) Таблицу поверх фона можно сделать полупрозрачной
+3) Таблицу поверх фона можно сделать полупрозрачной + зафиксировать фон при прокрутке
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/bg.png)
 
@@ -46,7 +46,7 @@ P.S: количество свободных уже добавили во вкл
 
 ## Как включить? (инструкция по шагам)
 
-1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/7.0/chrome-lazy-arm-7.rar), распаковать;
+1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/7.1/chrome-lazy-arm-7.1.rar), распаковать;
 2) В адресной строке браузера ввести `chrome://extensions/`
 
 ![](screenshoots/chrome_extensions_path.jpg)
