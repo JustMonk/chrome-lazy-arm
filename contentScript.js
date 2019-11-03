@@ -188,15 +188,26 @@ function checkBackground() {
    return (result == 'true') ? true : false;
 }
 
-function getBackgroundURL() {
+function getBackgroundProps() {
+   /*backgroundProps = {
+         url: '...',
+         fade: '...',
+         isFixed: '...'
+   }*/
    let currentCookie = document.cookie.split(';');
-   let result;
+   let result = {};
+
    currentCookie.forEach(val => {
       if (val.split('=')[0].trim() == 'backgroundImage') {
-         result = val.slice(val.indexOf('=') + 1);
-         result = result.split(`'`)[1];
+         try {
+            let settings = JSON.parse(val.slice(val.indexOf('=') + 1));
+            result = { url: val.slice(val.indexOf('=') + 1).split(`'`)[1], fade: settings.fade, isFixed: settings.background.indexOf('fixed') != -1 ? true : false }
+         } catch (e) {
+            result = { url: "", fade: false, isFixed: false }
+         }
       }
    })
+
    return result;
 }
 
@@ -287,8 +298,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
          colorFromCookie();
       }
    }
-   if (request.getBackgroundURL) {
-      sendResponse({ backgroundURL: getBackgroundURL() });
+   if (request.getBackgroundProps) {
+      sendResponse({ backgroundProps: getBackgroundProps() });
    }
    if (request.showRetailStats !== undefined) {
       if (request.showRetailStats == true) {
@@ -302,6 +313,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       sendResponse({ checkRetailStats: getRetailStats() });
    }
 
+   return true; //fix unchecked runtime error in callback
 });
 
 
@@ -311,7 +323,6 @@ function queuePlace() {
 
    let user = `${document.querySelector('[aria-label="Профиль"] img').alt.split(' ')[0]} ${document.querySelector('[aria-label="Профиль"] img').alt.split(' ')[1]}`;
 
-   //за 1 проход
    Array.from(document.querySelector('table').rows).forEach(val => {
       if (val.cells[val.cells.length - 2].firstChild.innerHTML == 'ожидание') {
          if (val.cells[0].innerHTML.trim() == user) userTiming = +val.cells[val.cells.length - 1].innerHTML.split(':').join('');
@@ -329,7 +340,7 @@ let infoWrapper = document.createElement('div');
 infoWrapper.id = 'info-wrapper';
 targetNode.insertAdjacentElement('afterbegin', infoWrapper);
 
-//контейнер "бездельников"
+//контейнер свободных
 let lazy = document.createElement('div');
 lazy.id = 'lazy-wrapper';
 lazy.innerHTML = 'Свободно операторов: ';
@@ -344,6 +355,7 @@ queue.id = 'queue-wrapper';
 queue.innerHTML = 'В очереди: ';
 let queueCounter = document.createElement('span');
 queueCounter.id = 'queue-counter';
+queueCounter.innerHTML = 'offline';
 queue.appendChild(queueCounter);
 infoWrapper.insertAdjacentElement('beforeend', queue);
 
@@ -372,12 +384,11 @@ setInterval(() => {
 
    //место в очереди
    //приоритет на звонок
-   if (document.querySelector('main > :last-child > :last-child > :first-child > :first-child > :first-child > :nth-child(2) > span').innerHTML.split(' ')[0].trim().toLowerCase() == 'ожидание') {
+   let currentStatus = document.querySelector('main > :last-child > :last-child > :first-child > :first-child > :first-child > :nth-child(2) > span');
+   if (currentStatus != null && currentStatus.innerHTML.split(' ')[0].trim().toLowerCase() == 'ожидание') {
       wait.innerHTML = `Входящих до звонка: ${queuePlace()} <span class="beta">beta</span>`
    } else {
-      wait.innerHTML = '';
+      if (currentStatus != null) wait.innerHTML = '';
    }
 
-
 }, 1000)
-

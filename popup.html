@@ -13,7 +13,7 @@
 
       <div style="display: flex; align-items: center; justify-content: center;">
          <h4>Настройка Lazy-ARM</h4> <span
-            style="font-size: 16px; background: #f48041; color: #fff; padding: 2px 5px; margin-left: 5px; border-radius: 3px; text-shadow: 1px 1px 1px black;">7.0</span>
+            style="font-size: 16px; background: #f48041; color: #fff; padding: 2px 5px; margin-left: 5px; border-radius: 3px; text-shadow: 1px 1px 1px black;">7.1</span>
       </div>
 
       <div class="row" style="margin-bottom: 0;">
@@ -115,7 +115,14 @@
 
             <div style="display: flex; justify-content: space-around; align-items: center;">
                <span>Палитра:</span>
-               <input type="color" id="user_color_picker" style='width:100px; height: 37px; border: 1px solid grey;' />
+
+               <div style="position: relative;">
+                  <input type="color" id="user_color_picker"
+                     style='width:50px; height: 37px; border: none; background: none;' />
+                     <label for="user_color_picker"><img src="./icon/palette-icon.png"
+                     style="width: 20px; height: 20px; position: absolute; right: -6px; bottom: -1px;"></label>
+               </div>
+
                <a id="confirm_user_color" class="waves-effect waves-light btn">Подтвердить</a>
             </div>
 
@@ -171,6 +178,15 @@
                      <label>
                         <input type="checkbox" id="fade_table" class="filled-in" />
                         <span>Прозрачность в таблице</span>
+                     </label>
+                  </p>
+               </div>
+
+               <div class="col s12">
+                  <p style="margin-top: 0;">
+                     <label>
+                        <input type="checkbox" id="fixed_bg" class="filled-in" />
+                        <span>Фиксированный фон</span>
                      </label>
                   </p>
                </div>
