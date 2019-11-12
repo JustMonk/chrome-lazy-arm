@@ -12,8 +12,10 @@
          "matches": [
             "https://aster-mp5.kontur/cc-agent/#/",
             "https://aster-mp5.kontur/cc-agent/",
-            "https://aster-usk.kontur/cc-agent/",
-            "https://aster-usk.kontur/cc-agent/#/"
+            "https://kats1.kontur/cc-agent/",
+            "https://kats1.kontur/cc-agent/#/",
+            "https://aster-uks.kontur/cc-agent/",
+            "https://aster-uks.kontur/cc-agent/#/"
          ],
          "js": [
             "contentScript.js"
