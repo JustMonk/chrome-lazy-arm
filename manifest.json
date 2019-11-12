@@ -11,7 +11,9 @@
       {
          "matches": [
             "https://aster-mp5.kontur/cc-agent/#/",
-            "https://aster-mp5.kontur/cc-agent/"
+            "https://aster-mp5.kontur/cc-agent/",
+            "https://aster-usk.kontur/cc-agent/",
+            "https://aster-usk.kontur/cc-agent/#/"
          ],
          "js": [
             "contentScript.js"
