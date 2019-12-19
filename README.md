@@ -3,23 +3,25 @@
 ![](https://img.shields.io/badge/version-7.1-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## Где взять?
-[Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/releases/download/7.1/chrome-lazy-arm-7.1.rar)
+[Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/archive/master.zip)
 
 ![](screenshoot/demo.jpg)
 
 ## Что нового?
 
-1) Возможность посчитать когда ждать "свой" входящий
+1) Обновлено под новый адрес
+
+2) Возможность посчитать когда ждать "свой" входящий
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/queue.jpg)
 
 P.S: количество свободных уже добавили во вкладке очередей
 
-2) Можно настроить цвет шрифта для отдельных элементов
+3) Можно настроить цвет шрифта для отдельных элементов
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/font.jpg)
 
-3) Таблицу поверх фона можно сделать полупрозрачной + зафиксировать фон при прокрутке
+4) Таблицу поверх фона можно сделать полупрозрачной + зафиксировать фон при прокрутке
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/bg.png)
 
@@ -46,7 +48,7 @@ P.S: количество свободных уже добавили во вкл
 
 ## Как включить? (инструкция по шагам)
 
-1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/releases/download/7.1/chrome-lazy-arm-7.1.rar), распаковать;
+1) [Скачать архив](https://github.com/JustMonk/chrome-lazy-arm/archive/master.zip), распаковать;
 2) В адресной строке браузера ввести `chrome://extensions/`
 
 ![](screenshoots/chrome_extensions_path.jpg)

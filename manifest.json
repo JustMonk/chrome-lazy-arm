@@ -1,7 +1,7 @@
 {
    "name": "Lazy ARM",
    "version": "7.1",
-   "description": "Обложка для админки, добавляет разные фичи; если не работает проверь адрес - должен быть /cc-agent/ (без слова test); Клик по иконке открывает настройки",
+   "description": "Обложка для админки, добавляет разные фичи; Клик по иконке открывает настройки; kats.kontur/cc-agent/",
    "manifest_version": 2,
    "permissions": [
       "contextMenus",
@@ -10,12 +10,8 @@
    "content_scripts": [
       {
          "matches": [
-            "https://aster-mp5.kontur/cc-agent/#/",
-            "https://aster-mp5.kontur/cc-agent/",
-            "https://kats1.kontur/cc-agent/",
-            "https://kats1.kontur/cc-agent/#/",
-            "https://aster-uks.kontur/cc-agent/",
-            "https://aster-uks.kontur/cc-agent/#/"
+            "https://kats.kontur/cc-agent/",
+            "https://kats.kontur/cc-agent/#/"
          ],
          "js": [
             "contentScript.js"
