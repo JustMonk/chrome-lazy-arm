@@ -249,19 +249,19 @@ function setRetailStats() {
          document.querySelector('main > :first-child > :first-child').appendChild(statsWrapper);
       }
       longTimer = setInterval(() => {
-         let socket = new WebSocket("wss://aster-mp5.kontur/ws");
+         let socket = new WebSocket("wss://kats.kontur/ws");
          socket.onmessage = function (event) {
             let respObj = JSON.parse(event.data);
             socket.close();
 
             //add stats
             document.getElementById('stats-wrapper').innerHTML = `
-            <p>[EDI] Принято: ${respObj.queues['76032'].answered} | Потеряно: ${respObj.queues['76032'].abandoned}</p>
-            <p>[Merc] Принято: ${respObj.queues['79084'].answered} | Потеряно: ${respObj.queues['79084'].abandoned}</p>
-            <p>[Sverka] Принято: ${respObj.queues['79031'].answered} | Потеряно: ${respObj.queues['79031'].abandoned}</p>
-            <p>[Postavki] Принято: ${respObj.queues['76205'].answered} | Потеряно: ${respObj.queues['76205'].abandoned}</p>
-            <p>[Factor] Принято: ${respObj.queues['76260'].answered} | Потеряно: ${respObj.queues['76260'].abandoned}</p>
-            <p style="border-top: 1px solid #cccccc; margin-top: 10px; padding-top: 5px;">Всего принято: ${respObj.queues['76032'].answered + respObj.queues['79084'].answered + respObj.queues['79031'].answered + respObj.queues['76205'].answered + respObj.queues['76260'].answered} | Потеряно: ${respObj.queues['76032'].abandoned + respObj.queues['79084'].abandoned + respObj.queues['79031'].abandoned + respObj.queues['76205'].abandoned + respObj.queues['76260'].abandoned}
+            <p>[EDI] Принято: ${respObj.queues['20555'].answered} | Потеряно: ${respObj.queues['20555'].abandoned}</p>
+            <p>[Merc] Принято: ${respObj.queues['20577'].answered} | Потеряно: ${respObj.queues['20577'].abandoned}</p>
+            <p>[Sverka] Принято: ${respObj.queues['20575'].answered} | Потеряно: ${respObj.queues['20575'].abandoned}</p>
+            <p>[Postavki] Принято: ${respObj.queues['20569'].answered} | Потеряно: ${respObj.queues['20569'].abandoned}</p>
+            <p>[Factor] Принято: ${respObj.queues['20571'].answered} | Потеряно: ${respObj.queues['20571'].abandoned}</p>
+            <p style="border-top: 1px solid #cccccc; margin-top: 10px; padding-top: 5px;">Всего принято: ${respObj.queues['20555'].answered + respObj.queues['20577'].answered + respObj.queues['20575'].answered + respObj.queues['20569'].answered + respObj.queues['20571'].answered} | Потеряно: ${respObj.queues['20555'].abandoned + respObj.queues['20577'].abandoned + respObj.queues['20575'].abandoned + respObj.queues['20569'].abandoned + respObj.queues['20571'].abandoned}
             `;
          };
       }, 5000);
