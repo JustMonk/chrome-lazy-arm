@@ -1,6 +1,6 @@
 {
    "name": "Lazy ARM",
-   "version": "7.1",
+   "version": "8.0",
    "description": "Обложка для админки, добавляет разные фичи; Клик по иконке открывает настройки; kats.kontur/cc-agent/",
    "manifest_version": 2,
    "permissions": [
@@ -27,7 +27,9 @@
       "128": "./icon/fast-128.png"
    },
    "background": {
-      "page": "background.html",
+      "scripts": [
+         "background.js"
+      ],
       "persistent": true
    },
    "web_accessible_resources": [

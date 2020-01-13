@@ -6,6 +6,14 @@ var longTimer;
 setRetailStats();
 
 function colorFromCookie() {
+   //список для проверки дефолтных значений
+   let defaultState = {
+      bg: false,
+      font: false,
+      night: false,
+      backgroundImage: false
+   };
+
    let currentCookie = document.cookie.split(';');
    currentCookie.forEach(val => {
 
@@ -18,6 +26,7 @@ function colorFromCookie() {
                document.getElementsByTagName('head')[0].appendChild(style);
             })
          }
+         defaultState.bg = true;
       }
 
       if (val.split('=')[0].trim() == 'font') {
@@ -43,6 +52,7 @@ function colorFromCookie() {
                document.getElementsByTagName('head')[0].appendChild(style);
             })
          }
+         defaultState.font = true;
       }
 
       if (val.split('=')[0].trim() == 'night') {
@@ -135,6 +145,7 @@ function colorFromCookie() {
          } else {
             nightStyle.remove();
          }
+         defaultState.night = true;
       }
 
       if (val.split('=')[0].trim() == 'backgroundImage') {
@@ -160,9 +171,19 @@ function colorFromCookie() {
             `;
             document.getElementsByTagName('head')[0].appendChild(style);
          }
+         defaultState.backgroundImage = true;
       }
 
-   })
+   });
+
+   //set default state
+   if (!defaultState.bg) {/*default css value*/};
+   if (!defaultState.font) document.cookie = `font={"header":"#fff","side":"#000","info":"#000"}`;
+   if (!defaultState.night) document.cookie = `night=false`;
+   if (!defaultState.backgroundImage) {
+      document.cookie = `backgroundImage={"background":"background:  center/cover url('') !important","fade":false}`;
+      document.cookie = `isImage=false`;
+   }
 }
 
 function checkNight() {
@@ -386,9 +407,12 @@ setInterval(() => {
    //приоритет на звонок
    let currentStatus = document.querySelector('main > :last-child > :last-child > :first-child > :first-child > :first-child > :nth-child(2) > span');
    if (currentStatus != null && currentStatus.innerHTML.split(' ')[0].trim().toLowerCase() == 'ожидание') {
-      wait.innerHTML = `Входящих до звонка: ${queuePlace()} <span class="beta">beta</span>`
+      wait.innerHTML = `Входящих до звонка: ${queuePlace()} <span class="beta">beta</span>`;
+      //отрисовываем бадж
+      chrome.runtime.sendMessage({type: "queueBadge", options: {queue: queuePlace()}});
    } else {
       if (currentStatus != null) wait.innerHTML = '';
+      chrome.runtime.sendMessage({type: "queueBadge", options: {queue: 0}});
    }
 
 }, 1000)
