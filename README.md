@@ -13,15 +13,11 @@
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/badge.png)
 
-2) Возможность посчитать когда ждать "свой" входящий
-
-![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/queue.jpg)
-
-3) Можно настроить цвет шрифта для отдельных элементов
+2) Можно настроить цвет текста для отдельных элементов
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/font.jpg)
 
-4) Таблицу поверх фона можно сделать полупрозрачной + зафиксировать фон при прокрутке
+3) Таблицу поверх фона можно сделать полупрозрачной + зафиксировать фон при прокрутке
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/bg.png)
 
