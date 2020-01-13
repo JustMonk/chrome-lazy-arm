@@ -1,6 +1,6 @@
-## Chrome lazy arm 7.1
+## Chrome lazy arm 8.0
 
-![](https://img.shields.io/badge/version-7.1-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
+![](https://img.shields.io/badge/version-8.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## Где взять?
 [Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/archive/master.zip)
@@ -9,13 +9,13 @@
 
 ## Что нового?
 
-1) Обновлено под новый адрес
+1) Счетчик звонковой очереди всегда на экране (отображается под значком расширения, работает даже при нахождении в других вкладках или окнах)
+
+![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/badge.png)
 
 2) Возможность посчитать когда ждать "свой" входящий
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/queue.jpg)
-
-P.S: количество свободных уже добавили во вкладке очередей
 
 3) Можно настроить цвет шрифта для отдельных элементов
 
@@ -36,11 +36,6 @@ P.S: количество свободных уже добавили во вкл
 Изменить цвет шапки/шрифта (клик по значку расширения открывает настройки)
 
 ![](screenshoots/settings.jpg)
-
-Можно добавить ссылку для изображения в фон (но пока без дополнительных опций, я бы не злоупотреблял)
-
-![](screenshoots/bg.png)
-
 
 Есть возможность переключиться на темную схему
 
