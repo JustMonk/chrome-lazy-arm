@@ -1,7 +1,7 @@
 <html>
 
 <head>
-   <title>Water Popup</title>
+   <title>Popup</title>
    <meta charset="utf-8">
    <link type="text/css" rel="stylesheet" href="./libs/css/materialize.min.css" media="screen,projection" />
    <link type="text/css" rel="stylesheet" href="./libs/css/popup.css" />
@@ -12,248 +12,22 @@
    <div id="popup-wrapper">
 
       <div style="display: flex; align-items: center; justify-content: center;">
-         <h4>Настройка Lazy-ARM</h4> <span
-            style="font-size: 16px; background: #f48041; color: #fff; padding: 2px 5px; margin-left: 5px; border-radius: 3px; text-shadow: 1px 1px 1px black;">8.0</span>
+         <h4 style="font-size: 20px;">Lazy-ARM</h4> <span
+            style="font-size: 16px; background: #41c2f4; color: #fff; padding: 2px 5px; margin-left: 5px; border-radius: 3px; text-shadow: 1px 1px 1px black;">9.0L</span>
       </div>
 
-      <div class="row" style="margin-bottom: 0;">
-         <div class="col s12">
-            <ul class="tabs">
-               <li class="tab col s3"><a href="#test1" class="active">Оформление</a></li>
-               <li class="tab col s3"><a href="#test2"><b>Чат (!)</b></a></li>
-               <li class="tab col s3"><a href="#test3">Помощь</a></li>
-            </ul>
-         </div>
-      </div>
+      <div id="test1" class="col s12" style="padding: 10px; background: #f5f5f5;">
 
-      <div id="test1" class="col s12" style="padding: 20px; background: #f5f5f5;">
-
-         <div class="card-panel grey darken-2 white-text">
-
-            <h5>Ночной режим</h5>
-            <div class="switch" style="display: flex; justify-content: center;">
-               <label class="grey-text text-lighten-1">
-                  Off
-                  <input type="checkbox" id="night">
-                  <span class="lever"></span>
-                  On
-               </label>
-            </div>
-
-         </div>
-
-         <div class="card-panel white">
-
-            <h5>Стандартный пресет</h5>
-            <div class="theme_color_table">
-               <a href="#" id="#ffebee" class="theme_color" style="background: #ffebee"></a>
-               <a href="#" id="#ffcdd2" class="theme_color" style="background: #ffcdd2"></a>
-               <a href="#" id="#ef9a9a" class="theme_color" style="background: #ef9a9a"></a>
-               <a href="#" id="#e57373" class="theme_color" style="background: #e57373"></a>
-               <a href="#" id="#ef5350" class="theme_color" style="background: #ef5350"></a>
-               <a href="#" id="#f44336" class="theme_color" style="background: #f44336"></a>
-               <a href="#" id="#e53935" class="theme_color" style="background: #e53935"></a>
-               <a href="#" id="#d32f2f" class="theme_color" style="background: #d32f2f"></a>
-               <a href="#" id="#c62828" class="theme_color" style="background: #c62828"></a>
-               <a href="#" id="#b71c1c" class="theme_color" style="background: #b71c1c"></a>
-            </div>
-            <div class="theme_color_table">
-               <a href="#" id="#e8eaf6" class="theme_color" style="background: #e8eaf6"></a>
-               <a href="#" id="#c5cae9" class="theme_color" style="background: #c5cae9"></a>
-               <a href="#" id="#9fa8da" class="theme_color" style="background: #9fa8da"></a>
-               <a href="#" id="#7986cb" class="theme_color" style="background: #7986cb"></a>
-               <a href="#" id="#5c6bc0" class="theme_color" style="background: #5c6bc0"></a>
-               <a href="#" id="#3f51b5" class="theme_color" style="background: #3f51b5"></a>
-               <a href="#" id="#3949ab" class="theme_color" style="background: #3949ab"></a>
-               <a href="#" id="#303f9f" class="theme_color" style="background: #303f9f"></a>
-               <a href="#" id="#283593" class="theme_color" style="background: #283593"></a>
-               <a href="#" id="#1a237e" class="theme_color" style="background: #1a237e"></a>
-            </div>
-            <div class="theme_color_table">
-               <a href="#" id="#e3f2fd" class="theme_color" style="background: #e3f2fd"></a>
-               <a href="#" id="#bbdefb" class="theme_color" style="background: #bbdefb"></a>
-               <a href="#" id="#90caf9" class="theme_color" style="background: #90caf9"></a>
-               <a href="#" id="#64b5f6" class="theme_color" style="background: #64b5f6"></a>
-               <a href="#" id="#42a5f5" class="theme_color" style="background: #42a5f5"></a>
-               <a href="#" id="#2196f3" class="theme_color" style="background: #2196f3"></a>
-               <a href="#" id="#1e88e5" class="theme_color" style="background: #1e88e5"></a>
-               <a href="#" id="#1976d2" class="theme_color" style="background: #1976d2"></a>
-               <a href="#" id="#1565c0" class="theme_color" style="background: #1565c0"></a>
-               <a href="#" id="#0d47a1" class="theme_color" style="background: #0d47a1"></a>
-            </div>
-            <div class="theme_color_table">
-               <a href="#" id="#e8f5e9" class="theme_color" style="background: #e8f5e9"></a>
-               <a href="#" id="#c8e6c9" class="theme_color" style="background: #c8e6c9"></a>
-               <a href="#" id="#a5d6a7" class="theme_color" style="background: #a5d6a7"></a>
-               <a href="#" id="#81c784" class="theme_color" style="background: #81c784"></a>
-               <a href="#" id="#66bb6a" class="theme_color" style="background: #66bb6a"></a>
-               <a href="#" id="#4caf50" class="theme_color" style="background: #4caf50"></a>
-               <a href="#" id="#43a047" class="theme_color" style="background: #43a047"></a>
-               <a href="#" id="#388e3c" class="theme_color" style="background: #388e3c"></a>
-               <a href="#" id="#2e7d32" class="theme_color" style="background: #2e7d32"></a>
-               <a href="#" id="#1b5e20" class="theme_color" style="background: #1b5e20"></a>
-            </div>
-            <div class="theme_color_table">
-               <a href="#" id="#fff3e0" class="theme_color" style="background: #fff3e0"></a>
-               <a href="#" id="#ffe0b2" class="theme_color" style="background: #ffe0b2"></a>
-               <a href="#" id="#ffcc80" class="theme_color" style="background: #ffcc80"></a>
-               <a href="#" id="#ffb74d" class="theme_color" style="background: #ffb74d"></a>
-               <a href="#" id="#ffa726" class="theme_color" style="background: #ffa726"></a>
-               <a href="#" id="#ff9800" class="theme_color" style="background: #ff9800"></a>
-               <a href="#" id="#fb8c00" class="theme_color" style="background: #fb8c00"></a>
-               <a href="#" id="#f57c00" class="theme_color" style="background: #f57c00"></a>
-               <a href="#" id="#ef6c00" class="theme_color" style="background: #ef6c00"></a>
-               <a href="#" id="#e65100" class="theme_color" style="background: #e65100"></a>
-            </div>
-
-         </div>
-
-
-         <div class="card-panel teal lighten-5">
-
-            <h5>Выбрать свой цвет фона</h5>
-
-            <div style="display: flex; justify-content: space-around; align-items: center;">
-               <span>Палитра:</span>
-
-               <div style="position: relative;">
-                  <input type="color" id="user_color_picker"
-                     style='width:50px; height: 37px; border: none; background: none;' />
-                     <label for="user_color_picker"><img src="./icon/palette-icon.png"
-                     style="width: 20px; height: 20px; position: absolute; right: -6px; bottom: -1px;"></label>
-               </div>
-
-               <a id="confirm_user_color" class="waves-effect waves-light btn">Подтвердить</a>
-            </div>
-
-         </div>
-
-
-         <div class="card-panel white">
-
-            <h5>Выбрать цвет текста</h5>
-
-            <div class="row"
-               style="display: flex; align-items: center; border-bottom: 1px solid #f1f1f1; padding: 10px 30px; margin-bottom: 0;">
-               <div class="col s8">Шапка:</div>
-               <div class="col s4" style="display: flex; justify-content: space-around;">
-                  <a href="#" data-target="header" data-color="#fff" class="font_color" style="background: #fff;"></a>
-                  <a href="#" data-target="header" data-color="#000" class="font_color" style="background: #000;"></a>
-               </div>
-            </div>
-
-            <div class="row"
-               style="display: flex; align-items: center; border-bottom: 1px solid #f1f1f1; padding: 10px 30px; margin-bottom: 0;">
-               <div class="col s8">Боковое меню:</div>
-               <div class="col s4" style="display: flex; justify-content: space-around;">
-                  <a href="#" data-target="side" data-color="#fff" class="font_color" style="background: #fff;"></a>
-                  <a href="#" data-target="side" data-color="#000" class="font_color" style="background: #000;"></a>
-               </div>
-            </div>
-
-            <div class="row"
-               style="display: flex; align-items: center; border-bottom: 1px solid #f1f1f1; padding: 10px 30px; margin-bottom: 0;">
-               <div class="col s8">Инфо-панель (кастом):</div>
-               <div class="col s4" style="display: flex; justify-content: space-around;">
-                  <a href="#" data-target="info" data-color="#fff" class="font_color" style="background: #fff;"></a>
-                  <a href="#" data-target="info" data-color="#000" class="font_color" style="background: #000;"></a>
-               </div>
-            </div>
-
-         </div>
-
-         <div class="card-panel white">
-
-            <h5>Фоновое изображение</h5>
-
-            <div class="row">
-               <div class="input-field col s12">
-                  <input placeholder="https://www.somesite.com/img/pic.png" id="image_url" type="text" class="validate">
-                  <label for="first_name">Вставьте ссылку на изображение</label>
-               </div>
-               <p style="font-size: 11px; text-align: center;">P.S: к темной схеме фон не применяется</p>
-
-               <div class="col s12">
-                  <p style="margin-top: 0;">
-                     <label>
-                        <input type="checkbox" id="fade_table" class="filled-in" />
-                        <span>Прозрачность в таблице</span>
-                     </label>
-                  </p>
-               </div>
-
-               <div class="col s12">
-                  <p style="margin-top: 0;">
-                     <label>
-                        <input type="checkbox" id="fixed_bg" class="filled-in" />
-                        <span>Фиксированный фон</span>
-                     </label>
-                  </p>
-               </div>
-
-               <div class="col s6"><a class="waves-effect waves-light btn" style="width: 100%;"
-                     id="save_background">Сохранить</a></div>
-               <div class="col s6"><a class="waves-effect waves-light btn red darken-1" style="width: 100%;"
-                     id="clear_background">Очистить
-                     фон</a></div>
-
-            </div>
-
-         </div>
-
-
-         <div class="card-panel white">
-
-            <h5>Обновления</h5>
-            <a href="https://github.com/JustMonk/chrome-lazy-arm"
-               target="_blank">github.com/JustMonk/chrome-lazy-arm</a>
-
+         <div style="font-size: 14px; padding: 5px 10px; background: #fff; box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);">
+            Отображает очередность распределения, без учета приоритета. 
          </div>
 
       </div>
-
-      <div id="test2" class="col s12">
-         <iframe src="https://justmonk.github.io/react-firebase-chat-widget/"
-            style="width: 100%; height: 482px; border: none;">
-            Ваш браузер не поддерживает встроенные фреймы!
-         </iframe>
-      </div>
-
-      <div id="test3" class="col s12" style="padding: 18px; background: #f5f5f5; min-height: 483px;">
-
-         <div class="card-panel white">
-            1) Автообновлений нет (хром запрещает приватным расширениям обновляться), поэтому загрузить можно только
-            руками
-            <br>
-            2) Особой пользы расширение не несет
-            <br>
-            3) Последняя версия всегда доступна в репозитории <a href="https://github.com/JustMonk/chrome-lazy-arm"
-               target="_blank">https://github.com/JustMonk/chrome-lazy-arm</a>
-
-         </div>
-
-         <div class="card-panel white">
-            <h5>Дополнительно</h5>
-
-            <p>
-               <label>
-                  <input type="checkbox" class="filled-in" id="retail_stats" />
-                  <span>Показать звонки ритейла за день</span>
-               </label>
-            </p>
-
-         </div>
-
-
-      </div>
-
 
    </div>
 
 
    <script type="text/javascript" src="./libs/js/materialize.min.js"></script>
-   <script src="popup.js"></script>
-
 </body>
 
 </html>

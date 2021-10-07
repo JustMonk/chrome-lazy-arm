@@ -1,17 +1,13 @@
 {
    "name": "Lazy ARM",
-   "version": "8.0",
-   "description": "Обложка для админки, добавляет разные фичи; Клик по иконке открывает настройки; kats.kontur/cc-agent/",
+   "version": "9.0",
+   "description": "Отображает очередность распределения, без учета приоритета.",
    "manifest_version": 2,
-   "permissions": [
-      "contextMenus",
-      "storage"
-   ],
+   "permissions": [],
    "content_scripts": [
       {
          "matches": [
-            "https://kats.kontur/cc-agent/",
-            "https://kats.kontur/cc-agent/#/"
+            "https://kats.kontur/cc-kontur/"
          ],
          "js": [
             "contentScript.js"
@@ -37,6 +33,6 @@
    ],
    "browser_action": {
       "default_popup": "popup.html",
-      "default_title": "Кликните для настройки внешнего вида админки"
+      "default_title": "Информация"
    }
 }
