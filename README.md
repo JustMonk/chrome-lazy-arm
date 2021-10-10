@@ -1,25 +1,17 @@
-## Chrome lazy arm 8.0
+## Chrome lazy arm
 
-![](https://img.shields.io/badge/version-8.0-green) ![](https://img.shields.io/badge/build-passing-brightgreen)
+![](https://img.shields.io/badge/version-9.0-green)
 
 ## Где взять?
 [Скачать последнюю версию по этой ссылке](https://github.com/JustMonk/chrome-lazy-arm/archive/master.zip)
 
-![](screenshoot/demo.jpg)
-
 ## Что нового?
 
-1) Счетчик звонковой очереди всегда на экране (отображается под значком расширения, работает даже при нахождении в других вкладках или окнах)
+1) Обновлено под v2 интерфейс, весь функционал только в виде счетчика.
+
+2) Счетчик звонковой очереди всегда на экране (отображается под значком расширения, работает даже при нахождении в других вкладках или окнах)
 
 ![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/badge.png)
-
-2) Можно настроить цвет текста для отдельных элементов
-
-![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/font.jpg)
-
-3) Таблицу поверх фона можно сделать полупрозрачной + зафиксировать фон при прокрутке
-
-![](https://github.com/JustMonk/chrome-lazy-arm/blob/master/screenshoots/bg.png)
 
 ## Зачем?
 
