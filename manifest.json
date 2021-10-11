@@ -7,7 +7,9 @@
    "content_scripts": [
       {
          "matches": [
-            "https://kats.kontur/cc-kontur/"
+            "https://kats.kontur/cc-kontur/#/",
+            "https://kats.kontur/cc-agent/#/",
+            "https://kats.kontur/cc-kontur-v2/#/"
          ],
          "js": [
             "contentScript.js"
