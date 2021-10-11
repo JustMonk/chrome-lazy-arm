@@ -61,7 +61,6 @@ setInterval(() => {
    if (!urlMatches.includes(document.location.href)) return removeStatsNode();
    else createStatsNode();
 
-   console.log(document.location.href)
    let tds = document.querySelectorAll('main td span');
    let queueSpans = document.querySelectorAll('main > :last-child > :last-child > :first-child span');
 
