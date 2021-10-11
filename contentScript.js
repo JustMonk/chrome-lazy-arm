@@ -57,8 +57,8 @@ function removeStatsNode() {
 }
 
 setInterval(() => {
-   let path = 'https://kats.kontur/cc-kontur-v2/#/';
-   if (document.location.href !== path) return removeStatsNode();
+   let urlMatches = ['https://kats.kontur/cc-agent/#/', 'https://kats.kontur/cc-kontur/#/', 'https://kats.kontur/cc-kontur-v2/#/'];
+   if (!urlMatches.includes(document.location.href)) return removeStatsNode();
    else createStatsNode();
 
    console.log(document.location.href)
