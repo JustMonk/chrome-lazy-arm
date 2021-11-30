@@ -4,7 +4,7 @@ function queuePlace() {
 
    let user = document.querySelector('main > :last-child > :last-child > :first-child > :first-child > :first-child > :nth-child(1) span').textContent.split(/\(([^()]*)\)$/)[0].trim();
 
-   Array.from(document.querySelector('table').rows).forEach(val => {
+   Array.from(document.querySelector('table').tBodies[0].rows).forEach(val => {
       if (val.cells[val.cells.length - 2].firstChild.innerHTML == 'ожидание') {
          if (val.cells[0].innerHTML.trim() == user) userTiming = +val.cells[val.cells.length - 1].innerHTML.split(':').join('');
          else +queueTiming.push(val.cells[val.cells.length - 1].innerHTML.split(':').join(''));

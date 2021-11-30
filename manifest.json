@@ -1,6 +1,6 @@
 {
    "name": "Lazy ARM",
-   "version": "9.0",
+   "version": "9.0.2",
    "description": "Отображает очередность распределения, без учета приоритета.",
    "manifest_version": 2,
    "permissions": [],
